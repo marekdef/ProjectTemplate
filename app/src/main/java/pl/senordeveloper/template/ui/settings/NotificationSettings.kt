@@ -28,7 +28,7 @@ fun NotificationSettings(
         stringResource(id = R.string.cd_notifications_enabled)
     } else stringResource(id = R.string.cd_notifications_disabled)
 
-    Surface(
+    SettingItem(
         modifier = modifier
     ) {
         Row(
