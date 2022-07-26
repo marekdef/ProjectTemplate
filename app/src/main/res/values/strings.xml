@@ -9,4 +9,8 @@
     <string name="cd_notifications_enabled">Notifications Enabled</string>
     <string name="cd_notifications_disabled">Notifications Disabled</string>
     <string name="title_notifications">Enable Notifications</string>
+
+    <string name="cd_hints_enabled">Hints Enabled</string>
+    <string name="cd_hints_disabled">Hints Disabled</string>
+    <string name="setting_show_hints">Show Hints</string>
 </resources>

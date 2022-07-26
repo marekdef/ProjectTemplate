@@ -2,10 +2,13 @@ package pl.senordeveloper.template.ui.settings
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.toggleable
-import androidx.compose.material.Switch
+import androidx.compose.material.Checkbox
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -17,15 +20,15 @@ import androidx.compose.ui.unit.dp
 import pl.senordeveloper.template.R
 
 @Composable
-fun NotificationSettings(
+fun HintSettingsItem(
     modifier: Modifier = Modifier,
     title: String,
-    checked: Boolean = false,
-    onCheckedChange: ((checked: Boolean) -> Unit) = {}
+    checked: Boolean,
+    onShowHintsToggled: (Boolean) -> Unit
 ) {
-    val notificationsEnabledState = if (checked) {
-        stringResource(id = R.string.cd_notifications_enabled)
-    } else stringResource(id = R.string.cd_notifications_disabled)
+    val hintsEnabledState = if (checked) {
+        stringResource(id = R.string.cd_hints_enabled)
+    } else stringResource(id = R.string.cd_hints_disabled)
 
     SettingsItem(
         modifier = modifier
@@ -34,20 +37,20 @@ fun NotificationSettings(
             modifier = Modifier
                 .toggleable(
                     value = checked,
-                    onValueChange = onCheckedChange,
-                    role = Role.Switch
+                    onValueChange = onShowHintsToggled,
+                    role = Role.Checkbox
                 )
                 .semantics {
-                    stateDescription = notificationsEnabledState
+                    stateDescription = hintsEnabledState
                 }
-                .padding(16.dp),
+                .padding(horizontal = 16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 text = title,
                 modifier = Modifier.weight(1f)
             )
-            Switch(
+            Checkbox(
                 checked = checked,
                 onCheckedChange = null
             )
@@ -57,6 +60,15 @@ fun NotificationSettings(
 
 @Preview
 @Composable
-private fun Preview() {
-    NotificationSettings(title = "Enable notifications")
+private fun HintSettingsItemPreview() {
+    val checked = remember {
+        mutableStateOf(true)
+    }
+    HintSettingsItem(
+        title = "Show hints",
+        checked = checked.value,
+        onShowHintsToggled = {
+            checked.value = it
+        }
+    )
 }

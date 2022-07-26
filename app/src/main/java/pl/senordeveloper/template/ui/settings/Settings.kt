@@ -12,7 +12,10 @@ fun Settings() {
     val viewModel: SettingsViewModel = viewModel()
     val state = viewModel.uiState.collectAsState().value
 
-    SettingsList(state = state, onCheckedChange = {
-        viewModel.toggleNotificationSettings()
-    })
+    SettingsList(state = state,
+        onNotificationSettingsChange = {
+            viewModel.toggleNotificationSettings()
+        }, onHintSettingsChange = {
+            viewModel.toggleHintSettings()
+        })
 }

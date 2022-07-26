@@ -28,7 +28,8 @@ import pl.senordeveloper.template.ui.SettingsState
 fun SettingsList(
     modifier: Modifier = Modifier,
     state: SettingsState,
-    onCheckedChange: (Boolean) -> Unit = {}
+    onNotificationSettingsChange: (Boolean) -> Unit = {},
+    onHintSettingsChange: (Boolean) -> Unit = {}
 ) {
     Column(modifier = modifier.verticalScroll(rememberScrollState())) {
         TopAppBar(
@@ -55,7 +56,14 @@ fun SettingsList(
             modifier = Modifier.fillMaxWidth(),
             title = stringResource(id = R.string.title_notifications),
             checked = state.notificationsEnabled,
-            onCheckedChange = onCheckedChange
+            onCheckedChange = onNotificationSettingsChange
+        )
+        Divider()
+        HintSettingsItem(
+            modifier = Modifier.fillMaxWidth(),
+            title = stringResource(id = R.string.setting_show_hints),
+            checked = state.hintsEnabled,
+            onShowHintsToggled = onHintSettingsChange
         )
         Divider()
     }
@@ -63,6 +71,6 @@ fun SettingsList(
 
 @Preview
 @Composable
-private fun Preview() {
+private fun SettingsListPreview() {
     SettingsList(state = SettingsState())
 }
