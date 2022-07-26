@@ -32,26 +32,7 @@ fun SettingsList(
     onHintSettingsChange: (Boolean) -> Unit = {}
 ) {
     Column(modifier = modifier.verticalScroll(rememberScrollState())) {
-        TopAppBar(
-            backgroundColor = MaterialTheme.colors.surface,
-            contentPadding = PaddingValues(start = 12.dp)
-        ) {
-            Row {
-                Icon(
-                    tint = MaterialTheme.colors.onSurface,
-                    imageVector = Icons.Default.ArrowBack,
-                    contentDescription = stringResource(
-                        id = R.string.cd_go_back
-                    )
-                )
-                Spacer(modifier = Modifier.width(16.dp))
-                Text(
-                    text = stringResource(id = R.string.title_settings),
-                    color = MaterialTheme.colors.onSurface,
-                    fontSize = 18.sp,
-                )
-            }
-        }
+        TopAppBar()
         NotificationSettings(
             modifier = Modifier.fillMaxWidth(),
             title = stringResource(id = R.string.title_notifications),
@@ -68,6 +49,8 @@ fun SettingsList(
         Divider()
     }
 }
+
+
 
 @Preview
 @Composable
