@@ -47,10 +47,14 @@ fun SettingsList(
             onShowHintsToggled = onHintSettingsChange
         )
         Divider()
+        ManageSubscriptionSettingItem(
+            title = stringResource(id = R.string.setting_manage_subscription),
+            onSettingClicked = {
+            }
+        )
+        Divider()
     }
 }
-
-
 
 @Preview
 @Composable
