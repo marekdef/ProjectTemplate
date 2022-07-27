@@ -52,7 +52,7 @@ fun SettingsList(
             onSettingClicked = {
             }
         )
-        Divider()
+        SectionSpacer(modifier = Modifier.fillMaxWidth())
     }
 }
 
