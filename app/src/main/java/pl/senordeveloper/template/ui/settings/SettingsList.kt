@@ -22,14 +22,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import pl.senordeveloper.template.R
+import pl.senordeveloper.template.ui.MarketingOption
 import pl.senordeveloper.template.ui.SettingsState
 
 @Composable
 fun SettingsList(
     modifier: Modifier = Modifier,
     state: SettingsState,
-    onNotificationSettingsChange: (Boolean) -> Unit = {},
-    onHintSettingsChange: (Boolean) -> Unit = {}
+    onNotificationSettingsChange: (Boolean) -> Unit,
+    onHintSettingsChange: (Boolean) -> Unit,
+    onOptionSelected: (MarketingOption) -> Unit
 ) {
     Column(modifier = modifier.verticalScroll(rememberScrollState())) {
         TopAppBar()
@@ -53,11 +55,20 @@ fun SettingsList(
             }
         )
         SectionSpacer(modifier = Modifier.fillMaxWidth())
+        MarketingSettingItem(
+            modifier = Modifier.fillMaxWidth(),
+            selectedOption = state.marketingOption,
+            onOptionSelected = onOptionSelected
+        )
+        Divider()
     }
 }
 
 @Preview
 @Composable
 private fun SettingsListPreview() {
-    SettingsList(state = SettingsState())
+    SettingsList(state = SettingsState(),
+        onHintSettingsChange = {},
+        onNotificationSettingsChange = {},
+        onOptionSelected = {})
 }

@@ -17,5 +17,6 @@ fun Settings() {
             viewModel.toggleNotificationSettings()
         }, onHintSettingsChange = {
             viewModel.toggleHintSettings()
-        })
+        }, onOptionSelected = viewModel::setMarketingSettings
+    )
 }
