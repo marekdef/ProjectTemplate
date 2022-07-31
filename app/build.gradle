@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'pl.droidsonroids.pitest'
 }
 
 android {
@@ -80,4 +81,9 @@ dependencies {
 
     androidTestImplementation "org.mockito.kotlin:mockito-kotlin:3.2.0"
     androidTestImplementation "org.mockito:mockito-android:3.12.4"
+}
+
+
+pitest {
+    targetClasses = ["pl.senordeveloper.template.*"]
 }
