@@ -2,6 +2,8 @@ package pl.senordeveloper.template
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import pl.senordeveloper.template.settings.SettingsViewModel
+import pl.senordeveloper.template.ui.SettingsState
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -11,6 +13,8 @@ import org.junit.Test
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        val settingsViewModel = SettingsViewModel()
+
+        assertEquals(settingsViewModel.uiState.value, SettingsState())
     }
 }
