@@ -2,7 +2,6 @@ package pl.senordeveloper.template.ui.settings
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.material.Checkbox
 import androidx.compose.material.Text

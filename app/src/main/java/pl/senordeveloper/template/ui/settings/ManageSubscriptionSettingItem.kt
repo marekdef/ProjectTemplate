@@ -1,6 +1,5 @@
 package pl.senordeveloper.template.ui.settings
 
-import android.icu.text.CaseMap
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding

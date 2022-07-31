@@ -1,6 +1,5 @@
 package pl.senordeveloper.template.ui.settings
 
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
