@@ -18,4 +18,5 @@
     <string name="setting_option_marketing">Receive marketing emails?</string>
     <string name="setting_option_theme">Theme</string>
     <string name="cd_select_theme">Select theme</string>
+    <string name="app_version">App version</string>
 </resources>

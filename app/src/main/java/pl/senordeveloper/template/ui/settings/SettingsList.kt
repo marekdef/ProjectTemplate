@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import pl.senordeveloper.template.BuildConfig
 import pl.senordeveloper.template.R
 import pl.senordeveloper.template.ui.MarketingOption
 import pl.senordeveloper.template.ui.SettingsState
@@ -57,6 +58,7 @@ fun SettingsList(
             onThemeSelected = onThemeSelected
         )
         SectionSpacer(modifier = Modifier.fillMaxWidth())
+        AppVersionSettingItem(appVersion = BuildConfig.VERSION_NAME)
     }
 }
 
