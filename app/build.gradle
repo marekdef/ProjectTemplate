@@ -56,6 +56,9 @@ dependencies {
 
     implementation 'androidx.activity:activity-compose:1.5.0'
 
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
     implementation 'org.slf4j:slf4j-api:1.7.32'
     implementation 'com.github.tony19:logback-android:2.0.0'
 
@@ -63,6 +66,7 @@ dependencies {
     debugImplementation 'com.facebook.soloader:soloader:0.10.4'
 
     releaseImplementation 'com.facebook.flipper:flipper-noop:0.154.0'
+
 
     testImplementation 'junit:junit:4.13.2'
 

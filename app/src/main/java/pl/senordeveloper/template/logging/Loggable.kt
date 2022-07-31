@@ -23,6 +23,10 @@ interface Loggable {
     companion object {
         inline fun <reified T> delegate(): Loggable = object: Loggable {
             override val logger: Logger = LoggerFactory.getLogger(T::class.java)
+
+            override fun debug(format: String, vararg args: Any) {
+                super.debug(format, *args)
+            }
         }
     }
 }
