@@ -4,6 +4,7 @@ import androidx.annotation.StringRes
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.performClick
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Rule
 import org.junit.Test
@@ -59,5 +60,17 @@ internal class SettingsTest {
             InstrumentationRegistry.getInstrumentation()
                 .targetContext.getString(titleId)
         ).assertIsDisplayed()
+    }
+
+    @Test
+    fun Enable_Notifications_Toggles_Selected_State() {
+        composeTestRule.setContent {
+            Settings()
+        }
+        composeTestRule.onNodeWithText(
+            InstrumentationRegistry.getInstrumentation()
+                .targetContext.getString(
+                    R.string.setting_enable_notifications)
+        ).performClick()
     }
 }
