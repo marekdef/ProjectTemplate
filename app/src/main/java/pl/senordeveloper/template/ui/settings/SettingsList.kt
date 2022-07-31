@@ -28,12 +28,12 @@ fun SettingsList(
         TopAppBar()
         NotificationSettings(
             modifier = Modifier.fillMaxWidth(),
-            title = stringResource(id = R.string.title_notifications),
+            title = stringResource(id = R.string.setting_enable_notifications),
             checked = state.notificationsEnabled,
             onCheckedChange = onNotificationSettingsChange
         )
         Divider()
-        HintSettingsItem(
+        HintsSettingItem(
             modifier = Modifier.fillMaxWidth(),
             title = stringResource(id = R.string.setting_show_hints),
             checked = state.hintsEnabled,

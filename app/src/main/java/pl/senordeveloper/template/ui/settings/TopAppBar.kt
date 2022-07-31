@@ -32,7 +32,7 @@ fun TopAppBar() {
             )
             Spacer(modifier = Modifier.width(16.dp))
             Text(
-                text = stringResource(id = R.string.setting_enable_notifications),
+                text = stringResource(id = R.string.title_settings),
                 color = MaterialTheme.colors.onSurface,
                 fontSize = 18.sp,
             )

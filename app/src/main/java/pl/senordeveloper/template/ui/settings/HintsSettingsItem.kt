@@ -10,6 +10,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.semantics
@@ -17,9 +18,10 @@ import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import pl.senordeveloper.template.R
+import pl.senordeveloper.template.ui.settings.Tags.TAG_CHECK_ITEM
 
 @Composable
-fun HintSettingsItem(
+fun HintsSettingItem(
     modifier: Modifier = Modifier,
     title: String,
     checked: Boolean,
@@ -29,11 +31,12 @@ fun HintSettingsItem(
         stringResource(id = R.string.cd_hints_enabled)
     } else stringResource(id = R.string.cd_hints_disabled)
 
-    SettingsItem(
+    SettingItem(
         modifier = modifier
     ) {
         Row(
             modifier = Modifier
+                .testTag(TAG_CHECK_ITEM)
                 .toggleable(
                     value = checked,
                     onValueChange = onShowHintsToggled,
@@ -59,11 +62,11 @@ fun HintSettingsItem(
 
 @Preview
 @Composable
-private fun HintSettingsItemPreview() {
+private fun HintsSettingItemPreview() {
     val checked = remember {
         mutableStateOf(true)
     }
-    HintSettingsItem(
+    HintsSettingItem(
         title = "Show hints",
         checked = checked.value,
         onShowHintsToggled = {

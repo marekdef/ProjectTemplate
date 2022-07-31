@@ -20,7 +20,7 @@ fun ManageSubscriptionSettingItem(
     title: String,
     onSettingClicked: () -> Unit
 ) {
-    SettingsItem(modifier = modifier) {
+    SettingItem(modifier = modifier) {
         Row(
             modifier = Modifier
                 .clickable(

@@ -26,7 +26,7 @@ fun MarketingSettingItem(
 ) {
     val options = stringArrayResource(id = R.array.setting_options_marketing_choice)
 
-    SettingsItem(
+    SettingItem(
         modifier = modifier
     ) {
         Column(

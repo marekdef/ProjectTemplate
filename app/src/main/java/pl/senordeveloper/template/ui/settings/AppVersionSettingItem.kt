@@ -18,7 +18,7 @@ fun AppVersionSettingItem(
     appVersion: String
 ) {
 
-    SettingsItem(
+    SettingItem(
         modifier = modifier
     ) {
         Row(

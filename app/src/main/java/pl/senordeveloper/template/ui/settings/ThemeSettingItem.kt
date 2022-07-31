@@ -25,7 +25,7 @@ fun ThemeSettingItem(
     selectedTheme: Theme,
     onThemeSelected: (Theme) -> Unit
 ) {
-    SettingsItem(modifier = modifier) {
+    SettingItem(modifier = modifier) {
         var expanded by remember {
             mutableStateOf(false)
         }
